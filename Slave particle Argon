@@ -1,0 +1,49 @@
+
+#include <Wire.h>
+
+// the address
+#define Address 0x05
+
+int led1 = D7;  // The on-board LED   
+
+
+bool close_door = false;
+int door = 0;
+int dooor = A0;
+int value;
+
+void setup () {
+    pinMode(led1, OUTPUT);
+    
+    Wire.begin(Address);
+    Wire.onReceive(receive_Data_from_pi3);
+   
+    Particle.variable("door", &door, INT); 
+}
+
+void receive_Data_from_pi3(int byteCount){
+
+    value = Wire.read();
+   
+}
+
+void loop(){
+    digitalWrite(led1, HIGH);   
+    
+    door = analogRead(dooor);
+    //
+    if (value==1){  
+       
+        Particle.publish(String(door), "Read_the_motion");  
+        Particle.publish("Door_is_opened", "true");
+        
+        close_door  = true;
+        value=0;
+    
+    }
+    
+    delay(10000);                 
+    digitalWrite(led1, LOW);     
+    
+}
+
