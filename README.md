@@ -2,6 +2,7 @@
 Baby Care Security System is a system that solves a real-world problem. 
 
 Problem statement:
+
 What is Baby Care Security System:
 Baby care system is a system that helps preventing childerns from leaving home without parents noticing. The idea is to install the system into a device and place that device on top of the house door. When the device is activated, whenever the house door is opened parents will be notified through a sound alarm or a text to their mobile devices. This can help parents protect their childrens from leaving home without their notice.
 
