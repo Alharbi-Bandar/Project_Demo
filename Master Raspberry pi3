@@ -17,7 +17,7 @@ GPIO.setup(led2,GPIO.OUT)
 GPIO.setup(led1,GPIO.OUT)
 
 address = 0x05
-bbb = smbus.SMBus(1)
+Communicate = smbus.SMBus(1)
 
 
 try:
@@ -27,7 +27,7 @@ try:
         Motion=GPIO.input(4)
         Magnatic=GPIO.input (12)
         if Motion==1 and Magnatic==1:
-            bbb.write_i2c_block_data(address,0x01,[0,0,0,0,1])
+            Communicate.write_i2c_block_data(address,0x01,[0,0,0,0,1])
             GPIO.output(16, True)
             GPIO.output(led2,GPIO.HIGH)
             GPIO.output(led1,GPIO.LOW)
