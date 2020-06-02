@@ -10,11 +10,13 @@ If Children leave the home without parnet notice, this could go many different w
 Especially kids in age between (2 to 5) can do things without knowing the consequences of their actions. Therefore, it is the parents responsibility to guard them all the time, and with the help of Baby Care Security System this can be achieved.
 
 The solution:
+
 Baby Care Security System purpose is to notify the parents whenever the door is open through an email message and a sound alarm.
 I will build the system to modify me if the child has opened the door. 
 The system will send me a notification message that the door is opened. 
 
 The connections:
+
 I have a Raspberry pi 3 as Master and particle Argon as slave.
 With the use of i2c communication between master Rasberry Pi3 and slave particle Argon devices. The motion sensor and magnetic sensor will be attached to the Rasberry Pi3 and placed on top of the door. 
 The Raspberry pi3 also has the two LEDs the green LED indicates the system is working and the red LED indicate the door is 
@@ -22,6 +24,7 @@ opened. When the door is open the LED switch to the red one and communicate with
 The particle Argon will use IFTTT software to notify the parents when the door is opened. 
 
 Final result:
+
 Therefore, the parent will act to help or provent children from leaving the house. 
 
 
