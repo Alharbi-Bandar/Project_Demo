@@ -3,6 +3,8 @@ Baby Care Security System is a system that solves a real-world problem.
 
 Problem statement:
 
+How can parents prevent their children from leaving the house without their notices?
+
 What is Baby Care Security System:
 Baby care system is a system that helps preventing childerns from leaving home without parents noticing. The idea is to install the system into a device and place that device on top of the house door. When the device is activated, whenever the house door is opened parents will be notified through a sound alarm or a text to their mobile devices. This can help parents protect their childrens from leaving home without their notice.
 
@@ -17,7 +19,7 @@ The system will send me a notification message that the door is opened.
 
 The connections:
 
-I have a Raspberry pi 3 as Master and particle Argon as slave.
+I have a communication protocol between the Raspberry pi 3 as Master and particle Argon as slave.
 With the use of i2c communication between master Rasberry Pi3 and slave particle Argon devices. The motion sensor and magnetic sensor will be attached to the Rasberry Pi3 and placed on top of the door. 
 The Raspberry pi3 also has the two LEDs the green LED indicates the system is working and the red LED indicate the door is 
 opened. When the door is open the LED switch to the red one and communicate with Particle Argon that the system is activated. Additionally, a feature is added to the system that when the door ramins opened for a period of time, a sound alarm will turn off to notify the parents.
