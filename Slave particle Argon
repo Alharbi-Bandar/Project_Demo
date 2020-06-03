@@ -1,49 +1,54 @@
-
 #include <Wire.h>
 
-// the address
 #define Address 0x05
 
 int led1 = D7;  // The on-board LED   
-
 
 bool close_door = false;
 int door = 0;
 int dooor = A0;
 int value;
 
+
+
 void setup () {
     pinMode(led1, OUTPUT);
     
+    
     Wire.begin(Address);
-    Wire.onReceive(receive_Data_from_pi3);
-   
+    Wire.onReceive(receive_Request_from_RaspberryPi3);
     Particle.variable("door", &door, INT); 
+
+    
 }
 
-void receive_Data_from_pi3(int byteCount){
+// receive_Request_from_RaspberryPi3
+void receive_Request_from_RaspberryPi3(int receive){
 
     value = Wire.read();
-   
 }
+
 
 void loop(){
     digitalWrite(led1, HIGH);   
     
     door = analogRead(dooor);
-    //
+    //camunicate_with_IFTTT_to_notify_the_parents_by_email
     if (value==1){  
        
-        Particle.publish(String(door), "Read_the_motion");  
+        Particle.publish(String(door), "Read_the_sensor");  
         Particle.publish("Door_is_opened", "true");
         
         close_door  = true;
         value=0;
-    
-    }
+        }
     
     delay(10000);                 
-    digitalWrite(led1, LOW);     
+    digitalWrite(led1, LOW);
+   
     
 }
+
+
+
 
